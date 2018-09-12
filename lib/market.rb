@@ -1,4 +1,4 @@
-require_relative 'vendor.rob'
+require_relative 'vendor.rb'
 
 class Market
 	attr_reader :name, :vendors
@@ -8,5 +8,14 @@ class Market
     @vendors = vendors
 	end
 
+	def add_vendor(vendor_in)
+		@vendors << vendor_in
+	end
 
+	def vendor_names
+		@vendors.map do |vendor|
+			vendor.name
+		end
+	end
+	
 end
